@@ -19,17 +19,17 @@ namespace FindAndReplace
             while (hasFile)
             {
 
-
-                Console.WriteLine("Please enter a file name: ");
-                Console.WriteLine();
                 Console.WriteLine("Your current directory is displayed below");
-
                 Console.Write(@"****C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\m1-w4d3-file-io-part2-exercises-pair\...");
+                Console.WriteLine();
+
+                Console.WriteLine("Please enter a file path: ");
 
 
                 fileName = Console.ReadLine();
 
-                if (File.Exists(@"C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\m1-w4d3-file-io-part2-exercises-pair\"+fileName))
+                //if (File.Exists(@"C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\m1-w4d3-file-io-part2-exercises-pair\"+fileName))
+                if (File.Exists(fileName))
                 {
 
                     hasFile = false;
@@ -94,7 +94,9 @@ namespace FindAndReplace
 
             string filePath = string.Concat(backUPFolder, fileName);
 
-            string fullPath = Path.Combine(directory, filePath);
+            string fullPath = fileName;
+
+            //string fullPath = Path.Combine(directory, filePath);
             
 
             try
