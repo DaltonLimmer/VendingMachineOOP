@@ -18,10 +18,11 @@ namespace TDDExercises
         public int Add(string numbers)
         {
             int result = 0;
-            
-            
+
+
             char delimeter = ';';
-            
+
+
             if (numbers.Contains('\n')||(numbers.Contains(',')))
             {
                 string[] multiNum;
