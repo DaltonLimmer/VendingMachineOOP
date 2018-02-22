@@ -24,8 +24,6 @@ namespace FindAndReplace
                 Console.WriteLine();
 
                 Console.WriteLine("Please enter a file path: ");
-
-
                 fileName = Console.ReadLine();
 
                 //if (File.Exists(@"C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\m1-w4d3-file-io-part2-exercises-pair\"+fileName))
