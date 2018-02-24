@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Capstone.Classes
 {
-    public class VendingItems
+    public class VendingItem
     {
+        public static LinkedList<VendingItem> list = new LinkedList<VendingItem>();
+
+        private static string _filePath = @"C:\Temp\vendingmachine.csv";
+
         public string Location { get; }
 
         public string ProductName { get; }
@@ -43,7 +48,8 @@ namespace Capstone.Classes
         }
 
 
-        public VendingItems(string line)
+
+        public VendingItem(string line)
         {
             string[] wholeLine = line.Split('|');
 
@@ -54,13 +60,26 @@ namespace Capstone.Classes
 
         }
 
+
+        public static void PopulateList()
+        {
+            using (StreamReader sr = new StreamReader(_filePath))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    VendingItem item = new VendingItem(line);
+                    list.AddLast(item);
+                }
+            }
+
+        }
+
+
         public void Transaction()
         {
-            
-            
-                QuantityOnHand--;
-            
-            
+            QuantityOnHand--;
         }
+
     }
 }
