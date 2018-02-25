@@ -27,7 +27,7 @@ namespace Capstone
             {
                 Console.Clear();
                 Console.WriteLine($"Purchase Menu!\n\n(1) Feed Money\n(2) Select Product\n(3) Finish Transaction\n\nCurrent balance = {money.CurrentBalance.ToString("c")}");
-                Console.Write("\nSelect a option...");
+                Console.Write("\nSelect an option...");
                 string purchaseMenuSelection = Console.ReadLine();
                 Console.Clear();
 

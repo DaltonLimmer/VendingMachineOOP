@@ -40,56 +40,56 @@ namespace Capstone.Classes
         {
             decimal totalMoneyBack = balanceDueBack;
 
-            decimal remainer = totalMoneyBack;
+            decimal remainder = totalMoneyBack;
 
             if (totalMoneyBack % 0.25m == 0)
             {
                 _quarters = totalMoneyBack / 0.25m;
-                remainer = 0;
+                remainder = 0;
             }
             else if (totalMoneyBack % 0.25m != 0)
             {
-                remainer = totalMoneyBack % 0.25m;
+                remainder = totalMoneyBack % 0.25m;
 
-                totalMoneyBack -= remainer;
+                totalMoneyBack -= remainder;
 
                 _quarters = totalMoneyBack / 0.25m;
             }
 
-            totalMoneyBack = remainer;
+            totalMoneyBack = remainder;
 
             if (totalMoneyBack % 0.10m == 0)
             {
                 _dimes = totalMoneyBack / 0.10m;
 
-                remainer = 0;
+                remainder = 0;
             }
-            else if (remainer % 0.10m != 0)
+            else if (remainder % 0.10m != 0)
             {
-                remainer = remainer % 0.10m;
+                remainder = remainder % 0.10m;
 
-                totalMoneyBack -= remainer;
+                totalMoneyBack -= remainder;
 
                 _dimes = totalMoneyBack / 0.10m;
             }
 
-            totalMoneyBack = remainer;
+            totalMoneyBack = remainder;
 
             if (totalMoneyBack % 0.05m == 0)
             {
                 _nickels = totalMoneyBack / 0.05m;
 
-                remainer = 0;
+                remainder = 0;
             }
-            else if (remainer % 0.05m != 0 && remainer > 0.05m)
+            else if (remainder % 0.05m != 0 && remainder > 0.05m)
             {
-                remainer = remainer % 0.05m;
+                remainder = remainder % 0.05m;
 
-                totalMoneyBack -= remainer;
+                totalMoneyBack -= remainder;
 
                 _nickels = totalMoneyBack / 0.05m;
             }
-            _pennies = remainer / 0.01m;
+            _pennies = remainder / 0.01m;
 
 
             CurrentBalance = 0;

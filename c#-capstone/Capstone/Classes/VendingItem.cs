@@ -61,7 +61,7 @@ namespace Capstone.Classes
 
         public static void PopulateList()
         {
-            using (StreamReader sr = new StreamReader(@"C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\c#-capstone\etc\vendingmachine.csv"))
+            using (StreamReader sr = new StreamReader(@"C:\Users\Dalton Limmer\workspace\team4-c-week4-pair-exercises\c#-capstone\etc\vendingmachine.csv"))
             {
                 while (!sr.EndOfStream)
                 {

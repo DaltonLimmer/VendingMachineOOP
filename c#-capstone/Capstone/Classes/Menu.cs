@@ -109,7 +109,7 @@ namespace Capstone.Classes
                             item.Transaction();
                             Program.money.Transaction(item.Price);
                             Program.money._totalSales += item.Price;
-                            result = "thank you for your purchase!";
+                            result = "Thank you for your purchase!";
                             break;
                         }
                         else
@@ -156,9 +156,10 @@ namespace Capstone.Classes
             Console.Write("\nYour Change is...\n");
             Console.WriteLine(Rows.CreateRow2($"{Program.money._quarters} Quarters", $"{Program.money._dimes} Dimes", $"{Program.money._nickels} Nickels", 15));
             Console.WriteLine($"\nFor a Grand Total of {grandTotal}");
+            //Console.WriteLine("\nPress any key to continue.");
 
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
 
 
