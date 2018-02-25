@@ -11,8 +11,6 @@ namespace Capstone.Classes
     {
         public static LinkedList<VendingItem> list = new LinkedList<VendingItem>();
 
-        private static string _filePath = @"C:\Temp\vendingmachine.csv";
-
         public string Location { get; }
 
         public string ProductName { get; }
@@ -63,7 +61,7 @@ namespace Capstone.Classes
 
         public static void PopulateList()
         {
-            using (StreamReader sr = new StreamReader(_filePath))
+            using (StreamReader sr = new StreamReader(@"C:\Users\Mataan Abucar\workspace\team4-c-week4-pair-exercises\c#-capstone\etc\vendingmachine.csv"))
             {
                 while (!sr.EndOfStream)
                 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -103,11 +105,11 @@ namespace Capstone.Classes
                         if (item.QuantityOnHand > 0)
                         {
                             LogAudit._boughtItems.Add(userSelection);
+                            LogAudit.MasterTransaction(item.ProductName, item.Price, Program.money.CurrentBalance);
                             item.Transaction();
                             Program.money.Transaction(item.Price);
                             Program.money._totalSales += item.Price;
                             result = "thank you for your purchase!";
-                            LogAudit.MasterTransaction(item.ProductName, item.Price, Program.money.CurrentBalance);
                             break;
                         }
                         else

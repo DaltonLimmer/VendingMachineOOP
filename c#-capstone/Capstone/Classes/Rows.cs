@@ -8,6 +8,16 @@ namespace Capstone.Classes
 {
     public class Rows
     {
+
+        public static string CreateRow3(string col1, string col2, string col3, int colWidth)
+        {
+            string result = "";
+            result += CreateColumn(col1, colWidth+8);
+            result += CreateColumn(col2, colWidth-2);
+            result += CreateColumn(col3, colWidth);
+            return result;
+        }
+
         public static string CreateRow2(string col1, string col2, string col3, int colWidth)
         {
             string result = "";

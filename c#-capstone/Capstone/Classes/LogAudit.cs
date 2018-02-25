@@ -10,15 +10,13 @@ namespace Capstone.Classes
     public class LogAudit
     {
 
-        private static DateTime time = DateTime.Now;
-
         public static List<string> _boughtItems = new List<string>();
 
         public static void GiveChangeLog( decimal currentBalance)
         {
             using (StreamWriter sw = new StreamWriter($@"C:\VendingMachineFolder\log.txt", true))
             {
-                sw.WriteLine($"{time} GIVE CHANGE:  {currentBalance.ToString("c")}  $0.00");
+                sw.WriteLine($"{DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")}   " + Rows.CreateRow3("GIVE CHANGE:", currentBalance.ToString("c"),  "$0.00",10));
             }
         }
 
@@ -30,7 +28,7 @@ namespace Capstone.Classes
 
             using (StreamWriter sw = new StreamWriter($@"C:\VendingMachineFolder\log.txt", true))
             {
-                sw.WriteLine($"{time}  FEED MONEY:  {money.ToString("c")}   {currentBalance.ToString("c")}");
+                sw.WriteLine($"{DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")}   " + Rows.CreateRow3("FEED MONEY:", money.ToString("c"), currentBalance.ToString("c"),10));
 
             }
         }
@@ -44,7 +42,7 @@ namespace Capstone.Classes
             }
             using (StreamWriter sw = new StreamWriter($@"C:\VendingMachineFolder\log.txt", true))
             {
-                sw.WriteLine($"{time}   {itemName}   {currentBalance.ToString("c")} {(currentBalance - itemPrice).ToString("c")}");
+                sw.WriteLine($"{DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")}   " + Rows.CreateRow3(itemName, currentBalance.ToString("c"), (currentBalance - itemPrice).ToString("c"), 10));
             }
 
         }
